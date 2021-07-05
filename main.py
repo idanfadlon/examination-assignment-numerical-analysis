@@ -38,9 +38,9 @@ def factorial(n):
 
 
 def calc_p(p, iter):
-    # pram p: calculate p value
+    # pram p: calculate value of p*(p-1)(p-2)...
     # pram iter: the current iteration by the method used
-    # return: the value of p
+    # return: the value of p*(p-1)(p-2)...
     if iter == 1:
         return p
     return calc_p(p - 1, iter - 1) * p
