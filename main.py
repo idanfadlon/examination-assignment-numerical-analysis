@@ -19,7 +19,9 @@ def delta(deg, i, y_array):
     # pram i: the current iteration
     # return: delta y0 degrees values
 
-    if deg == 0 or i + 1 == len(y_array):
+    if i + deg >= len(y_array):
+        return None
+    if deg == 1 and i + 1 < len(y_array):
         return y_array[i + 1] - y_array[i]
 
     return delta(deg - 1, i + 1, y_array) - delta(deg - 1, i, y_array)
@@ -54,7 +56,7 @@ def divided_difference_forward_calc(y_array, p):
         if i == 0:
             sum += y_array[i]
         else:
-            sum += (calc_p(p, i) * delta(i-1, 0, y_array)) / factorial(i)
+            sum += (calc_p(p, i) * delta(i, 0, y_array)) / factorial(i)
 
     return sum
 
@@ -75,8 +77,8 @@ def main():
     else:
         p = (xf - x_array[0]) / h
         print("h = x1-x0 = {0}\np = (xf - x0) / h = {1}\n ".format(h, p))
-        for i in range(len(y_array) - 1):
-            print("delte y zero on degrre {0}  = {1}".format(i + 1, delta(i, 0, y_array)))
+        for i in range(1, len(y_array)):
+            print("delta y0 on degree {0}  = {1}".format(i, delta(i, 0, y_array)))
         print("\ny(x={0}) = {1}".format(xf, divided_difference_forward_calc(y_array, p)))
 
 
