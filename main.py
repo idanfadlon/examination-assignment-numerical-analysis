@@ -69,9 +69,10 @@ def divided_difference_forward_calc(y_array, p):
 
 
 def main():
+    # pram numberofpoint: the amount of points that user want
     # pram x_array: array of x values
     # pram y_array: array of y values
-    # pram xf: the value of x that we want calculate with the method
+    # pram xf: the value of x that the user want calculate with the method
     # pram h: the difference between x1-x0
     # pram p: calculate value of (xf - x0) / h
     # Printing the sub calculations and the value of y function at xf value
