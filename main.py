@@ -75,9 +75,19 @@ def main():
     # pram h: the difference between x1-x0
     # pram p: calculate value of (xf - x0) / h
     # Printing the sub calculations and the value of y function at xf value
-    x_array = (195, 200, 205, 210)
-    y_array = (15,22, 14, 30)
-    xf = 203
+
+    print("how many points would you like to insert?")
+    numberofpoint = int(input())
+    x_array = [0]*numberofpoint
+    y_array = [0]*numberofpoint
+    for i in range(numberofpoint):
+        print("x{0}= ".format(i), end="")
+        x_array[i]=int(input())
+        print("y{0}= ".format(i), end="")
+        y_array[i] = int(input())
+    print("insert an x value which you want to calculate")
+    print("x= ", end="")
+    xf = int(input())
     print("points valus:")
 
     for i in range(len(x_array)):
